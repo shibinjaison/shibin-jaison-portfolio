@@ -1088,21 +1088,38 @@ Modern AI-inspired responsive portfolio website with glassmorphism, animations, 
 
 <div class="contact-form">
 
-<form>
+<form action="https://formspree.io/f/mdaqdwva" method="POST">
 
-<input type="text" placeholder="Your Name" required>
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+    >
 
-<input type="email" placeholder="Your Email" required>
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+    >
 
-<input type="text" placeholder="Subject">
+    <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+    >
 
-<textarea rows="6" placeholder="Your Message"></textarea>
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Your Message"
+        required
+    ></textarea>
 
-<button type="submit">
-
-Send Message
-
-</button>
+    <button type="submit">
+        Send Message
+    </button>
 
 </form>
 
