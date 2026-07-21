@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Shibin Jaison - AI & ML Engineer Portfolio
 
 A modern AI-inspired personal portfolio website showcasing my journey as an AI & Machine Learning Engineer.
@@ -31,3 +32,7 @@ The website highlights my:
 ## Purpose
 
 This portfolio serves as a digital representation of my AI engineering journey, projects, and passion for developing intelligent systems that solve real-world problems.
+=======
+# shibin-jaison-portfolio
+AI &amp; ML Engineer Portfolio | Computer Vision | Deep Learning | Robotics | HCI | Built with HTML, CSS &amp; JavaScript
+>>>>>>> bad050948a61683ca9d5a55334a34977baf29bcf
