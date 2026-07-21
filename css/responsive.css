@@ -1,0 +1,481 @@
+/* ==========================================
+   RESPONSIVE CSS
+   Shibin Jaison Portfolio
+========================================== */
+
+/* ========= Large Screens ========= */
+
+@media (max-width:1400px){
+
+.container{
+    width:92%;
+}
+
+.hero h1{
+    font-size:72px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+}
+
+
+/* ========= Laptop ========= */
+
+@media (max-width:1200px){
+
+.hero h1{
+    font-size:64px;
+}
+
+.typing{
+    font-size:28px;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.timeline::before{
+    left:30px;
+}
+
+.timeline-item{
+    width:100%;
+    left:0 !important;
+    padding-left:80px;
+    padding-right:20px;
+    text-align:left !important;
+}
+
+.timeline-date{
+    margin-bottom:15px;
+}
+
+.contact-wrapper{
+    grid-template-columns:1fr;
+}
+
+}
+
+
+/* ========= Tablet ========= */
+
+@media (max-width:992px){
+
+header{
+    padding:15px 0;
+}
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+.logo{
+    font-size:26px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+.hero{
+    padding-top:150px;
+}
+
+.hero h1{
+    font-size:54px;
+}
+
+.hero h4{
+    font-size:20px;
+}
+
+.typing{
+    font-size:24px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.buttons{
+    flex-wrap:wrap;
+}
+
+.skill-grid,
+.project-grid,
+.education-grid,
+.certificate-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.language-grid,
+.interest-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.tech-grid{
+    justify-content:center;
+}
+
+}
+
+
+/* ========= Mobile ========= */
+
+@media (max-width:768px){
+
+section{
+    padding:80px 0;
+}
+
+.hero{
+    min-height:100vh;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero h4{
+    font-size:18px;
+}
+
+.typing{
+    font-size:20px;
+}
+
+.hero p{
+    font-size:15px;
+    line-height:1.8;
+}
+
+.buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.btn,
+.btn2{
+
+width:230px;
+
+text-align:center;
+
+}
+
+.section-title h2{
+
+font-size:34px;
+
+}
+
+.section-title p{
+
+font-size:16px;
+
+}
+
+.about p{
+
+font-size:16px;
+
+text-align:left;
+
+}
+
+.stats .container{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.skill-grid,
+.project-grid,
+.education-grid,
+.certificate-grid,
+.language-grid,
+.interest-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-form{
+
+padding:25px;
+
+}
+
+.timeline{
+
+margin-left:0;
+
+}
+
+.timeline-item{
+
+padding-left:55px;
+
+}
+
+.timeline::before{
+
+left:15px;
+
+}
+
+.project-card,
+.education-card,
+.skill-card{
+
+padding:25px;
+
+}
+
+}
+
+
+/* ========= Small Phones ========= */
+
+@media (max-width:576px){
+
+.logo{
+
+font-size:22px;
+
+}
+
+nav ul{
+
+gap:10px;
+
+}
+
+nav ul li a{
+
+font-size:14px;
+
+}
+
+.hero{
+
+padding-top:160px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero h4{
+
+font-size:17px;
+
+}
+
+.typing{
+
+font-size:18px;
+
+}
+
+.hero p{
+
+font-size:14px;
+
+}
+
+.buttons{
+
+gap:15px;
+
+}
+
+.btn,
+.btn2{
+
+width:200px;
+
+padding:15px;
+
+font-size:15px;
+
+}
+
+.stats .container{
+
+grid-template-columns:1fr;
+
+}
+
+.stat-box{
+
+padding:30px 20px;
+
+}
+
+.stat-box h2{
+
+font-size:40px;
+
+}
+
+.skill-card i{
+
+font-size:42px;
+
+}
+
+.project-icon{
+
+width:65px;
+
+height:65px;
+
+}
+
+.project-icon i{
+
+font-size:28px;
+
+}
+
+.footer-links{
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.social-links{
+
+justify-content:center;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+font-size:15px;
+
+}
+
+}
+
+
+/* ========= Extra Small Devices ========= */
+
+@media (max-width:400px){
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+.typing{
+
+font-size:16px;
+
+}
+
+.hero p{
+
+font-size:13px;
+
+}
+
+.section-title h2{
+
+font-size:28px;
+
+}
+
+.logo{
+
+font-size:18px;
+
+}
+
+.btn,
+.btn2{
+
+width:180px;
+
+font-size:14px;
+
+}
+
+.project-card h3{
+
+font-size:20px;
+
+}
+
+.education-card h3{
+
+font-size:22px;
+
+}
+
+}
+
+
+/* ========= Landscape Phones ========= */
+
+@media (max-height:600px){
+
+.hero{
+
+padding-top:120px;
+
+padding-bottom:80px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+margin:20px auto;
+
+}
+
+}
+@media(max-width:768px){
+
+.project-card{
+
+flex-direction:column;
+
+text-align:left;
+
+}
+
+.project-icon{
+
+margin-bottom:20px;
+
+}
+
+}

@@ -1,0 +1,615 @@
+/* ==========================================
+   ANIMATIONS.CSS
+   Shibin Jaison Portfolio
+========================================== */
+
+/* ==============================
+   Fade In
+============================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.fade-in{
+
+    animation:fadeIn 1s ease forwards;
+
+}
+
+/* ==============================
+   Fade Up
+============================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+/* ==============================
+   Fade Down
+============================== */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-down{
+
+    animation:fadeDown .8s ease forwards;
+
+}
+
+/* ==============================
+   Fade Left
+============================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+.fade-left{
+
+    animation:fadeLeft .8s ease forwards;
+
+}
+
+/* ==============================
+   Fade Right
+============================== */
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+.fade-right{
+
+    animation:fadeRight .8s ease forwards;
+
+}
+
+/* ==============================
+   Zoom In
+============================== */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+        transform:scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+.zoom-in{
+
+    animation:zoomIn .8s ease;
+
+}
+
+/* ==============================
+   Floating Animation
+============================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.float{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+/* ==============================
+   Pulse
+============================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.pulse{
+
+    animation:pulse 2s infinite;
+
+}
+
+/* ==============================
+   Glow
+============================== */
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:0 0 5px #00E5FF;
+
+    }
+
+    50%{
+
+        box-shadow:0 0 30px #00E5FF;
+
+    }
+
+    100%{
+
+        box-shadow:0 0 5px #00E5FF;
+
+    }
+
+}
+
+.glow{
+
+    animation:glow 2s infinite;
+
+}
+
+/* ==============================
+   Rotate
+============================== */
+
+@keyframes rotate360{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.rotate{
+
+    animation:rotate360 15s linear infinite;
+
+}
+
+/* ==============================
+   Gradient Text
+============================== */
+
+.gradient-text{
+
+    background:linear-gradient(
+    90deg,
+    #00E5FF,
+    #6C63FF,
+    #00E5FF);
+
+    background-size:300%;
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:gradientMove 6s linear infinite;
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0%;
+
+    }
+
+    100%{
+
+        background-position:300%;
+
+    }
+
+}
+
+/* ==============================
+   Card Hover
+============================== */
+
+.skill-card,
+.project-card,
+.education-card,
+.certificate-card,
+.language-card,
+.interest-card{
+
+    transition:
+    transform .4s,
+    box-shadow .4s;
+
+}
+
+.skill-card:hover,
+.project-card:hover,
+.education-card:hover,
+.certificate-card:hover,
+.language-card:hover,
+.interest-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 15px 45px rgba(0,229,255,.18);
+
+}
+
+/* ==============================
+   Button Animation
+============================== */
+
+.btn,
+.btn2{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::before,
+.btn2::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+.btn:hover::before,
+.btn2:hover::before{
+
+    left:120%;
+
+}
+
+/* ==============================
+   Social Hover
+============================== */
+
+.social-links a{
+
+    transition:.4s;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-6px)
+    scale(1.1);
+
+}
+
+/* ==============================
+   Navigation Hover
+============================== */
+
+nav ul li a{
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#00E5FF;
+
+}
+
+/* ==============================
+   Typing Cursor
+============================== */
+
+.typing::after{
+
+    content:"|";
+
+    color:#00E5FF;
+
+    animation:blink .7s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==============================
+   Hero Background Glow
+============================== */
+
+.hero::before{
+
+    animation:heroGlow 8s ease infinite;
+
+}
+
+.hero::after{
+
+    animation:heroGlow2 8s ease infinite;
+
+}
+
+@keyframes heroGlow{
+
+    0%{
+
+        transform:translate(0);
+
+    }
+
+    50%{
+
+        transform:translate(-30px,20px);
+
+    }
+
+    100%{
+
+        transform:translate(0);
+
+    }
+
+}
+
+@keyframes heroGlow2{
+
+    0%{
+
+        transform:translate(0);
+
+    }
+
+    50%{
+
+        transform:translate(30px,-20px);
+
+    }
+
+    100%{
+
+        transform:translate(0);
+
+    }
+
+}
+
+/* ==============================
+   Scroll To Top
+============================== */
+
+#topBtn{
+
+    transition:.4s;
+
+}
+
+#topBtn:hover{
+
+    transform:translateY(-8px)
+    rotate(360deg);
+
+}
+
+/* ==============================
+   Loader
+============================== */
+
+.spinner{
+
+    animation:
+    spin 1s linear infinite,
+    glow 2s infinite;
+
+}
+
+/* ==============================
+   Scroll Reveal
+============================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ==========================================
+   RIPPLE EFFECT
+========================================== */
+
+.btn,
+.btn2{
+
+position:relative;
+overflow:hidden;
+
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+transform:scale(0);
+
+background:rgba(255,255,255,.4);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+/* ==============================
+   END
+============================== */
