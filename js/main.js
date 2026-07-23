@@ -349,27 +349,15 @@ reveal();
    CONTACT FORM
 ========================== */
 
-const form =
-document.querySelector(".contact-form form");
+const form = document.querySelector(".contact-form form");
 
-if(form){
-
-form.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert(
-
-"Thank you for contacting me!\n\nI'll get back to you soon."
-
-);
-
-form.reset();
-
-});
-
+if (form) {
+    form.addEventListener("submit", () => {
+        setTimeout(() => {
+            alert("Thank you for contacting me!\n\nI'll get back to you soon.");
+        }, 500);
+    });
 }
-
 
 /* ==========================
    FOOTER YEAR
@@ -396,7 +384,22 @@ document.body.classList.add("loaded");
 
 });
 
+/* ==========================
+   MOBILE MENU
+========================== */
 
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-links");
+
+if(menuToggle){
+
+    menuToggle.addEventListener("click",()=>{
+
+        navMenu.classList.toggle("active");
+
+    });
+
+}
 /* ==========================================
    END OF FILE
 ========================================== */
