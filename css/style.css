@@ -1616,3 +1616,24 @@ z-index:2;
 .project-content{
     flex:1;
 }
+.hero-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.hero-image img{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #00d9ff;
+    box-shadow: 0 0 30px rgba(0,217,255,0.4);
+    transition: 0.4s ease;
+}
+
+.hero-image img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 45px rgba(0,217,255,0.7);
+}
