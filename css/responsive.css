@@ -1,555 +1,1245 @@
 /* ==========================================
    RESPONSIVE CSS
    Shibin Jaison Portfolio
+   PART 1
+   Large Desktop • Laptop • Tablet
 ========================================== */
 
-/* ========= Large Screens ========= */
+
+/* ==========================
+   LARGE DESKTOP
+========================== */
 
 @media (max-width:1400px){
 
-.container{
-    width:92%;
+    .container{
+        width:92%;
+        max-width:1300px;
+    }
+
+    .hero-content{
+        max-width:900px;
+        margin:auto;
+    }
+
+    .hero h1{
+        font-size:72px;
+    }
+
+    .hero p{
+        font-size:18px;
+        max-width:760px;
+        margin:auto;
+    }
+
+    .section-title h2{
+        font-size:46px;
+    }
+
 }
 
-.hero h1{
-    font-size:72px;
-}
 
-.hero p{
-    font-size:18px;
-}
-
-}
-
-
-/* ========= Laptop ========= */
+/* ==========================
+   LAPTOP
+========================== */
 
 @media (max-width:1200px){
 
-.hero h1{
-    font-size:64px;
+    .container{
+        width:94%;
+    }
+
+    .hero h1{
+        font-size:64px;
+    }
+
+    .hero h4{
+        font-size:22px;
+    }
+
+    .typing{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:17px;
+        max-width:700px;
+        line-height:1.9;
+    }
+
+    .section-title h2{
+        font-size:42px;
+    }
+
+    .section-title p{
+        font-size:17px;
+    }
+
+    .stats .container{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .skill-grid,
+    .project-grid,
+    .education-grid,
+    .certificate-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .language-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .interest-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .timeline::before{
+        left:30px;
+    }
+
+    .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:80px;
+        padding-right:20px;
+        text-align:left !important;
+    }
+
+    .timeline-date{
+        margin-bottom:15px;
+    }
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
 }
 
-.typing{
-    font-size:28px;
-}
 
-.section-title h2{
-    font-size:42px;
-}
-
-.timeline::before{
-    left:30px;
-}
-
-.timeline-item{
-    width:100%;
-    left:0 !important;
-    padding-left:80px;
-    padding-right:20px;
-    text-align:left !important;
-}
-
-.timeline-date{
-    margin-bottom:15px;
-}
-
-.contact-wrapper{
-    grid-template-columns:1fr;
-}
-
-}
-
-
-/* ========= Tablet ========= */
+/* ==========================
+   TABLET
+========================== */
 
 @media (max-width:992px){
 
-header{
-    padding:15px 0;
+    html,
+    body{
+        overflow-x:hidden;
+    }
+
+    header{
+        width:100%;
+        padding:14px 20px;
+    }
+
+    nav{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-direction:row;
+        width:100%;
+        position:relative;
+    }
+
+    .logo{
+        flex:1;
+        font-size:24px;
+        font-weight:700;
+        white-space:nowrap;
+    }
+
+    .menu-toggle{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:30px;
+        cursor:pointer;
+        margin-left:auto;
+        color:#00d9ff;
+        z-index:1100;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:72px;
+        right:0;
+
+        width:min(260px,90vw);
+
+        background:#08111f;
+
+        border-radius:14px;
+
+        border:1px solid rgba(255,255,255,.08);
+
+        box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+        padding:20px;
+
+        display:flex;
+        flex-direction:column;
+
+        gap:14px;
+
+        opacity:0;
+        visibility:hidden;
+
+        transform:translateY(-15px) scale(.98);
+
+        transition:
+            opacity .35s ease,
+            transform .35s ease,
+            visibility .35s ease;
+
+        z-index:1000;
+
+    }
+
+    .nav-links.active{
+
+        opacity:1;
+        visibility:visible;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+    .nav-links li{
+        width:100%;
+        list-style:none;
+    }
+
+    .nav-links li a{
+
+        display:block;
+
+        width:100%;
+
+        padding:10px 0;
+
+    }
+
+    .hero{
+        padding:130px 20px 80px;
+    }
+
+    .hero-content{
+        max-width:700px;
+        margin:auto;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero h4{
+        font-size:20px;
+    }
+
+    .typing{
+        font-size:24px;
+    }
+
+    .hero p{
+        font-size:16px;
+        line-height:1.9;
+    }
+
+    .buttons{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:18px;
+    }
+
+    .btn,
+    .btn2{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .skill-grid,
+    .project-grid,
+    .education-grid,
+    .certificate-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .language-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .interest-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .tech-grid{
+        justify-content:center;
+    }
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .contact-form{
+        margin-top:20px;
+    }
+
+    .project-card,
+    .education-card,
+    .skill-card,
+    .certificate-card{
+        padding:28px;
+    }
+
+    footer{
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+    }
+
 }
-
-nav{
-    flex-direction:column;
-    gap:20px;
-}
-
-.logo{
-    font-size:26px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-}
-
-.hero{
-    padding-top:150px;
-}
-
-.hero h1{
-    font-size:54px;
-}
-
-.hero h4{
-    font-size:20px;
-}
-
-.typing{
-    font-size:24px;
-}
-
-.hero p{
-    font-size:17px;
-}
-
-.buttons{
-    flex-wrap:wrap;
-}
-
-.skill-grid,
-.project-grid,
-.education-grid,
-.certificate-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.language-grid,
-.interest-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.tech-grid{
-    justify-content:center;
-}
-
-}
-
-
-/* ========= Mobile ========= */
+/* ==========================================
+   RESPONSIVE CSS
+   PART 2
+   Mobile Devices (768px)
+========================================== */
 
 @media (max-width:768px){
 
-section{
-    padding:80px 0;
+    section{
+        padding:80px 0;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    /* Header */
+
+    header{
+        padding:12px 18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .menu-toggle{
+        font-size:28px;
+    }
+
+    .nav-links{
+        top:68px;
+        right:12px;
+        width:min(240px,90vw);
+        padding:18px;
+        gap:12px;
+    }
+
+    /* Hero */
+
+    .hero{
+        min-height:100vh;
+        padding:120px 20px 80px;
+        text-align:center;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:100%;
+        padding:0;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.2;
+    }
+
+    .hero h4{
+        font-size:18px;
+    }
+
+    .typing{
+        font-size:20px;
+    }
+
+    .hero p{
+        font-size:15px;
+        line-height:1.8;
+        margin:25px auto;
+    }
+
+    /* Buttons */
+
+    .buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:18px;
+    }
+
+    .btn,
+    .btn2{
+        width:100%;
+        max-width:240px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    }
+
+    /* Titles */
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .section-title p{
+        font-size:16px;
+    }
+
+    /* About */
+
+    .about p{
+        font-size:16px;
+        text-align:left;
+        line-height:1.8;
+    }
+
+    /* Statistics */
+
+    .stats .container{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .stat-box{
+        padding:25px;
+    }
+
+    .stat-box h2{
+        font-size:40px;
+    }
+
+    /* Skills */
+
+    .skill-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .skill-card{
+        padding:25px;
+    }
+
+    .skill-card i{
+        font-size:45px;
+    }
+
+    /* Projects */
+
+    .project-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .project-card{
+        padding:25px;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .project-icon{
+        width:70px;
+        height:70px;
+        margin-bottom:20px;
+    }
+
+    .project-icon i{
+        font-size:30px;
+    }
+
+    /* Education */
+
+    .education-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .education-card{
+        padding:25px;
+    }
+
+    /* Certificates */
+
+    .certificate-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .certificate-card{
+        padding:25px;
+    }
+
+    /* Timeline */
+
+    .timeline{
+        margin-left:0;
+    }
+
+    .timeline::before{
+        left:18px;
+    }
+
+    .timeline-item{
+        padding-left:55px;
+        padding-right:0;
+    }
+
+    /* Tech Stack */
+
+    .tech-grid{
+        justify-content:center;
+        gap:12px;
+    }
+
+    .tech-grid span{
+        font-size:14px;
+    }
+
+    /* Languages */
+
+    .language-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    /* Interests */
+
+    .interest-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    /* Contact */
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .contact-info{
+        margin-bottom:10px;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        width:100%;
+        font-size:15px;
+    }
+
+    /* Footer */
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .social-links{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    footer{
+        text-align:center;
+    }
+
 }
-
-.hero{
-    min-height:100vh;
-}
-
-.hero h1{
-    font-size:42px;
-}
-
-.hero h4{
-    font-size:18px;
-}
-
-.typing{
-    font-size:20px;
-}
-
-.hero p{
-    font-size:15px;
-    line-height:1.8;
-}
-
-.buttons{
-    flex-direction:column;
-    align-items:center;
-}
-
-.btn,
-.btn2{
-
-width:230px;
-
-text-align:center;
-
-}
-
-.section-title h2{
-
-font-size:34px;
-
-}
-
-.section-title p{
-
-font-size:16px;
-
-}
-
-.about p{
-
-font-size:16px;
-
-text-align:left;
-
-}
-
-.stats .container{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.skill-grid,
-.project-grid,
-.education-grid,
-.certificate-grid,
-.language-grid,
-.interest-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.contact-wrapper{
-
-grid-template-columns:1fr;
-
-}
-
-.contact-form{
-
-padding:25px;
-
-}
-
-.timeline{
-
-margin-left:0;
-
-}
-
-.timeline-item{
-
-padding-left:55px;
-
-}
-
-.timeline::before{
-
-left:15px;
-
-}
-
-.project-card,
-.education-card,
-.skill-card{
-
-padding:25px;
-
-}
-
-}
+/* ==========================================
+   RESPONSIVE CSS
+   PART 3
+   Small Phones • Extra Small Devices
+========================================== */
 
 
-/* ========= Small Phones ========= */
+/* ==========================
+   SMALL PHONES
+========================== */
 
 @media (max-width:576px){
 
-.logo{
+    html,
+    body{
+        overflow-x:hidden;
+    }
 
-font-size:22px;
+    header{
+        padding:10px 15px;
+    }
+
+    .logo{
+        font-size:20px;
+        letter-spacing:1px;
+    }
+
+    .menu-toggle{
+        font-size:26px;
+    }
+
+    .nav-links{
+
+        width:min(220px,92vw);
+
+        top:65px;
+        right:10px;
+
+        padding:18px;
+
+    }
+
+    .hero{
+
+        padding:110px 18px 70px;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero h4{
+
+        font-size:17px;
+
+    }
+
+    .typing{
+
+        font-size:18px;
+
+    }
+
+    .hero p{
+
+        font-size:14px;
+        line-height:1.8;
+
+    }
+
+    .buttons{
+
+        gap:15px;
+
+    }
+
+    .btn,
+    .btn2{
+
+        width:100%;
+        max-width:220px;
+
+        padding:15px;
+
+        font-size:15px;
+
+    }
+
+    .section-title h2{
+
+        font-size:30px;
+
+    }
+
+    .section-title p{
+
+        font-size:15px;
+
+    }
+
+    .stats .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stat-box{
+
+        padding:30px 20px;
+
+    }
+
+    .stat-box h2{
+
+        font-size:40px;
+
+    }
+
+    .skill-card,
+    .project-card,
+    .education-card,
+    .certificate-card{
+
+        padding:22px;
+
+    }
+
+    .skill-card i{
+
+        font-size:42px;
+
+    }
+
+    .project-icon{
+
+        width:65px;
+        height:65px;
+
+    }
+
+    .project-icon i{
+
+        font-size:28px;
+
+    }
+
+    .footer-links{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .social-links{
+
+        justify-content:center;
+
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+
+        font-size:15px;
+
+    }
 
 }
 
-nav ul{
 
-gap:10px;
+/* ==========================
+   EXTRA SMALL DEVICES
+========================== */
+
+@media (max-width:400px){
+
+    .logo{
+
+        font-size:18px;
+
+    }
+
+    .menu-toggle{
+
+        font-size:24px;
+
+    }
+
+    .hero{
+
+        padding-top:100px;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+    .typing{
+
+        font-size:16px;
+
+    }
+
+    .hero p{
+
+        font-size:13px;
+
+    }
+
+    .section-title h2{
+
+        font-size:26px;
+
+    }
+
+    .btn,
+    .btn2{
+
+        max-width:180px;
+
+        font-size:14px;
+
+    }
+
+    .project-card h3{
+
+        font-size:20px;
+
+    }
+
+    .education-card h3{
+
+        font-size:22px;
+
+    }
+
+    .skill-card,
+    .project-card,
+    .education-card,
+    .certificate-card{
+
+        padding:20px;
+
+    }
+
+    .project-icon{
+
+        width:60px;
+        height:60px;
+
+    }
+
+    .project-icon i{
+
+        font-size:25px;
+
+    }
+
+    #topBtn{
+
+        width:42px;
+        height:42px;
+
+        right:12px;
+        bottom:12px;
+
+    }
+
+}
+/* ==========================================
+   RESPONSIVE CSS
+   PART 4
+   Landscape • Utilities • Final Optimizations
+========================================== */
+
+
+/* ==========================
+   LANDSCAPE PHONES
+========================== */
+
+@media (max-height:600px){
+
+    .hero{
+        min-height:auto;
+        padding:100px 20px 70px;
+    }
+
+    .hero-content{
+        max-width:900px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero h4{
+        font-size:18px;
+    }
+
+    .typing{
+        font-size:20px;
+    }
+
+    .hero p{
+        margin:20px auto;
+        max-width:700px;
+    }
+
+    .buttons{
+        flex-direction:row;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
 
 }
 
-nav ul li a{
 
-font-size:14px;
+/* ==========================
+   VERY SHORT SCREENS
+========================== */
 
-}
+@media (max-height:500px){
 
-.hero{
-
-padding-top:160px;
-
-}
-
-.hero h1{
-
-font-size:34px;
+    .hero{
+        padding-top:90px;
+        padding-bottom:50px;
+    }
 
 }
 
-.hero h4{
 
-font-size:17px;
+/* ==========================
+   IMAGES
+========================== */
 
-}
+img{
 
-.typing{
+    display:block;
 
-font-size:18px;
+    max-width:100%;
 
-}
+    height:auto;
 
-.hero p{
-
-font-size:14px;
-
-}
-
-.buttons{
-
-gap:15px;
+    object-fit:cover;
 
 }
+
+
+/* ==========================
+   BUTTONS
+========================== */
 
 .btn,
-.btn2{
+.btn2,
+button{
 
-width:200px;
+    display:inline-flex;
 
-padding:15px;
+    align-items:center;
 
-font-size:15px;
+    justify-content:center;
 
-}
+    gap:10px;
 
-.stats .container{
+    min-height:48px;
 
-grid-template-columns:1fr;
-
-}
-
-.stat-box{
-
-padding:30px 20px;
+    cursor:pointer;
 
 }
 
-.stat-box h2{
 
-font-size:40px;
-
-}
-
-.skill-card i{
-
-font-size:42px;
-
-}
-
-.project-icon{
-
-width:65px;
-
-height:65px;
-
-}
-
-.project-icon i{
-
-font-size:28px;
-
-}
-
-.footer-links{
-
-flex-direction:column;
-
-gap:12px;
-
-}
-
-.social-links{
-
-justify-content:center;
-
-}
+/* ==========================
+   FORMS
+========================== */
 
 .contact-form input,
 .contact-form textarea{
 
-font-size:15px;
+    width:100%;
+
+    box-sizing:border-box;
 
 }
 
-}
+textarea{
 
-
-/* ========= Extra Small Devices ========= */
-
-@media (max-width:400px){
-
-.hero h1{
-
-font-size:28px;
-
-}
-
-.typing{
-
-font-size:16px;
-
-}
-
-.hero p{
-
-font-size:13px;
-
-}
-
-.section-title h2{
-
-font-size:28px;
-
-}
-
-.logo{
-
-font-size:18px;
-
-}
-
-.btn,
-.btn2{
-
-width:180px;
-
-font-size:14px;
-
-}
-
-.project-card h3{
-
-font-size:20px;
-
-}
-
-.education-card h3{
-
-font-size:22px;
-
-}
+    resize:vertical;
 
 }
 
 
-/* ========= Landscape Phones ========= */
-
-@media (max-height:600px){
-
-.hero{
-
-padding-top:120px;
-
-padding-bottom:80px;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero p{
-
-margin:20px auto;
-
-}
-
-}
-@media(max-width:768px){
-
-.project-card{
-
-flex-direction:column;
-
-text-align:left;
-
-}
-
-.project-icon{
-
-margin-bottom:20px;
-
-}
-
-}
 /* ==========================
-   Mobile Navigation
+   TABLES
 ========================== */
 
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    color:#00d9ff;
-    cursor:pointer;
-}
+table{
 
-@media(max-width:768px){
-
-header{
-
-    padding:12px 18px;
-
-}
-
-nav{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-.logo{
-
-    font-size:24px;
-
-}
-
-.menu-toggle{
+    width:100%;
 
     display:block;
 
-}
-
-.nav-links{
-
-    position:absolute;
-    top:70px;
-    right:15px;
-
-    width:220px;
-
-    background:#08111f;
-
-    border-radius:12px;
-
-    display:none;
-
-    flex-direction:column;
-
-    padding:20px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    overflow-x:auto;
 
 }
 
-.nav-links.active{
+
+/* ==========================
+   LONG TEXT
+========================== */
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+span{
+
+    overflow-wrap:break-word;
+
+}
+
+
+/* ==========================
+   TECH GRID
+========================== */
+
+.tech-grid{
 
     display:flex;
 
-}
+    flex-wrap:wrap;
 
-.nav-links li{
+    justify-content:center;
 
-    margin:12px 0;
-
-}
+    gap:12px;
 
 }
+
+.tech-grid span{
+
+    margin:0;
+
+}
+
+
+/* ==========================
+   SOCIAL LINKS
+========================== */
+
+.social-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+    transition:.3s ease;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-5px);
+
+}
+/* ==========================
+   SCROLL TO TOP
+========================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:999;
+
+}
+
+@media(max-width:576px){
+
+    #topBtn{
+
+        width:45px;
+
+        height:45px;
+
+        right:15px;
+
+        bottom:15px;
+
+    }
+
+}
+
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
+
+:focus-visible{
+
+    outline:2px solid #00d9ff;
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================
+   TOUCH DEVICES
+========================== */
+
+@media (hover:none){
+
+    .btn:hover,
+    .btn2:hover,
+    .project-card:hover,
+    .skill-card:hover,
+    .education-card:hover,
+    .certificate-card:hover,
+    .interest-card:hover,
+    .language-card:hover{
+
+        transform:none;
+
+        box-shadow:none;
+
+    }
+
+}
+
+
+/* ==========================
+   DESKTOP HOVER EFFECTS
+========================== */
+
+@media (hover:hover){
+
+    .project-card,
+    .skill-card,
+    .education-card,
+    .certificate-card,
+    .interest-card,
+    .language-card{
+
+        transition:
+            transform .35s ease,
+            box-shadow .35s ease;
+
+    }
+
+    .project-card:hover,
+    .skill-card:hover,
+    .education-card:hover,
+    .certificate-card:hover,
+    .interest-card:hover,
+    .language-card:hover{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+
+/* ==========================
+   PERFORMANCE
+========================== */
+
+canvas{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+iframe{
+
+    max-width:100%;
+
+}
+
+
+/* ==========================
+   SMOOTH SCROLL
+========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* ==========================
+   PREVENT HORIZONTAL SCROLL
+========================== */
+
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/* ==========================
+   SELECTION COLOR
+========================== */
+
+::selection{
+
+    background:#00d9ff;
+
+    color:#08111f;
+
+}
+
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00d9ff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00b8d4;
+
+}
+
+
+/* ==========================
+   END OF FILE
+========================== */
