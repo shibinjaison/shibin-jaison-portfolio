@@ -1,7 +1,10 @@
 /* ==========================================
    SHIBIN JAISON PORTFOLIO
    main.js
+   PART 1
+   Loader • Typing • Header • Navigation
 ========================================== */
+
 
 /* ==========================
    LOADER
@@ -11,13 +14,17 @@ window.addEventListener("load", () => {
 
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
+    if (loader) {
 
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-        loader.style.transition = "0.8s";
+        setTimeout(() => {
 
-    }, 1200);
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            loader.style.transition = "0.8s";
+
+        }, 1200);
+
+    }
 
 });
 
@@ -30,11 +37,16 @@ const typingElement = document.querySelector(".typing");
 
 const roles = [
 
-    "AI & ML Engineer",
+    "AI & Machine Learning Engineer",
+
     "Computer Vision Engineer",
+
     "Python Developer",
+
     "Robotics Enthusiast",
+
     "Deep Learning Engineer",
+
     "Human Computer Interaction"
 
 ];
@@ -47,16 +59,16 @@ function typeEffect() {
 
     if (!typingElement) return;
 
-    const current = roles[roleIndex];
+    const currentRole = roles[roleIndex];
 
     if (!deleting) {
 
         typingElement.textContent =
-            current.substring(0, charIndex + 1);
+            currentRole.substring(0, charIndex + 1);
 
         charIndex++;
 
-        if (charIndex === current.length) {
+        if (charIndex === currentRole.length) {
 
             deleting = true;
 
@@ -69,7 +81,7 @@ function typeEffect() {
     } else {
 
         typingElement.textContent =
-            current.substring(0, charIndex - 1);
+            currentRole.substring(0, charIndex - 1);
 
         charIndex--;
 
@@ -79,8 +91,11 @@ function typeEffect() {
 
             roleIndex++;
 
-            if (roleIndex >= roles.length)
+            if (roleIndex >= roles.length) {
+
                 roleIndex = 0;
+
+            }
 
         }
 
@@ -101,21 +116,20 @@ const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
 
+    if (!header) return;
+
     if (window.scrollY > 80) {
 
-        header.style.background =
-            "rgba(5,8,22,.90)";
-
-        header.style.boxShadow =
-            "0 8px 25px rgba(0,0,0,.35)";
+        header.style.background = "rgba(5,8,22,.92)";
+        header.style.backdropFilter = "blur(10px)";
+        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.35)";
 
     }
 
     else {
 
-        header.style.background =
-            "rgba(5,8,22,.55)";
-
+        header.style.background = "rgba(5,8,22,.55)";
+        header.style.backdropFilter = "blur(8px)";
         header.style.boxShadow = "none";
 
     }
@@ -124,24 +138,31 @@ window.addEventListener("scroll", () => {
 
 
 /* ==========================
-   ACTIVE NAV LINK
+   ACTIVE NAVIGATION
 ========================== */
 
 const sections = document.querySelectorAll("section");
 
-const navLinks = document.querySelectorAll("nav ul li a");
+const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
-    let current = "";
+    let currentSection = "";
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 180;
 
-        if (pageYOffset >= sectionTop) {
+        const sectionHeight = section.offsetHeight;
 
-            current = section.getAttribute("id");
+        if (
+
+            window.pageYOffset >= sectionTop &&
+            window.pageYOffset < sectionTop + sectionHeight
+
+        ) {
+
+            currentSection = section.getAttribute("id");
 
         }
 
@@ -151,7 +172,11 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") === "#" + current) {
+        if (
+
+            link.getAttribute("href") === "#" + currentSection
+
+        ) {
 
             link.classList.add("active");
 
@@ -166,21 +191,24 @@ window.addEventListener("scroll", () => {
    SMOOTH SCROLL
 ========================== */
 
-document.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click", function(e){
+    anchor.addEventListener("click", function (e) {
 
         e.preventDefault();
 
-        const target =
-        document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(
 
-        if(target){
+            this.getAttribute("href")
+
+        );
+
+        if (target) {
 
             target.scrollIntoView({
 
-                behavior:"smooth"
+                behavior: "smooth",
+                block: "start"
 
             });
 
@@ -189,6 +217,12 @@ document.querySelectorAll('a[href^="#"]')
     });
 
 });
+/* ==========================================
+   SHIBIN JAISON PORTFOLIO
+   main.js
+   PART 2
+   Scroll Top • Counter • Reveal Animation
+========================================== */
 
 
 /* ==========================
@@ -197,35 +231,36 @@ document.querySelectorAll('a[href^="#"]')
 
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll",()=>{
+if (topBtn) {
 
-    if(window.scrollY > 500){
+    window.addEventListener("scroll", () => {
 
-        topBtn.style.display="block";
+        if (window.scrollY > 500) {
 
-    }
+            topBtn.style.opacity = "1";
+            topBtn.style.visibility = "visible";
+            topBtn.style.pointerEvents = "auto";
 
-    else{
+        } else {
 
-        topBtn.style.display="none";
+            topBtn.style.opacity = "0";
+            topBtn.style.visibility = "hidden";
+            topBtn.style.pointerEvents = "none";
 
-    }
+        }
 
-});
+    });
 
-if(topBtn){
+    topBtn.addEventListener("click", () => {
 
-topBtn.addEventListener("click",()=>{
+        window.scrollTo({
 
-window.scrollTo({
+            top: 0,
+            behavior: "smooth"
 
-top:0,
+        });
 
-behavior:"smooth"
-
-});
-
-});
+    });
 
 }
 
@@ -238,151 +273,337 @@ const counters = document.querySelectorAll(".stat-box h2");
 
 let counterStarted = false;
 
-function runCounters(){
+function animateCounters() {
 
-if(counterStarted) return;
+    if (counterStarted) return;
 
-counterStarted = true;
+    counterStarted = true;
 
-counters.forEach(counter=>{
+    counters.forEach(counter => {
 
-const original = counter.innerText;
+        const original = counter.innerText;
 
-const number =
-parseInt(original.replace(/\D/g,"")) || 0;
+        const number = parseInt(original.replace(/\D/g, "")) || 0;
 
-const suffix =
-original.replace(/[0-9]/g,"");
+        const suffix = original.replace(/[0-9]/g, "");
 
-let count = 0;
+        let count = 0;
 
-const increment = Math.max(1, Math.ceil(number/100));
+        const increment = Math.max(
 
-const update = ()=>{
+            1,
 
-count += increment;
+            Math.ceil(number / 100)
 
-if(count >= number){
+        );
 
-counter.innerText = original;
+        function updateCounter() {
 
-}
+            count += increment;
 
-else{
+            if (count >= number) {
 
-counter.innerText = count + suffix;
+                counter.innerText = original;
 
-requestAnimationFrame(update);
+            }
 
-}
+            else {
 
-};
+                counter.innerText = count + suffix;
 
-update();
+                requestAnimationFrame(updateCounter);
 
-});
+            }
 
-}
+        }
 
-window.addEventListener("scroll",()=>{
+        updateCounter();
 
-const stats = document.querySelector(".stats");
-
-if(!stats) return;
-
-const top = stats.getBoundingClientRect().top;
-
-if(top < window.innerHeight-100){
-
-runCounters();
+    });
 
 }
-
-});
 
 
 /* ==========================
-   FADE ANIMATION
+   START COUNTERS WHEN VISIBLE
 ========================== */
 
-const revealElements =
-document.querySelectorAll(
+const statsSection = document.querySelector(".stats");
 
-".skill-card,.project-card,.education-card,.certificate-card,.timeline-item,.interest-card,.language-card"
+if (statsSection) {
+
+    const counterObserver = new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    animateCounters();
+
+                }
+
+            });
+
+        },
+
+        {
+
+            threshold: 0.35
+
+        }
+
+    );
+
+    counterObserver.observe(statsSection);
+
+}
+
+
+/* ==========================
+   REVEAL ANIMATION
+========================== */
+
+const revealElements = document.querySelectorAll(
+
+    ".skill-card," +
+    ".project-card," +
+    ".education-card," +
+    ".certificate-card," +
+    ".timeline-item," +
+    ".interest-card," +
+    ".language-card," +
+    ".stat-box," +
+    ".tech-grid span"
 
 );
 
-function reveal(){
+revealElements.forEach(element => {
 
-revealElements.forEach(el=>{
+    element.style.opacity = "0";
 
-const top = el.getBoundingClientRect().top;
+    element.style.transform = "translateY(40px)";
 
-if(top < window.innerHeight-80){
+    element.style.transition =
 
-el.style.opacity="1";
-
-el.style.transform="translateY(0)";
-
-}
+        "opacity .8s ease, transform .8s ease";
 
 });
 
-}
 
-revealElements.forEach(el=>{
+const revealObserver = new IntersectionObserver(
 
-el.style.opacity="0";
+    entries => {
 
-el.style.transform="translateY(50px)";
+        entries.forEach(entry => {
 
-el.style.transition="all .8s ease";
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform =
+
+                    "translateY(0)";
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+
+        threshold: 0.15
+
+    }
+
+);
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
 
 });
-
-window.addEventListener("scroll",reveal);
-
-reveal();
 
 
 /* ==========================
-   CONTACT FORM
+   PARALLAX HERO
 ========================== */
 
-const form = document.querySelector(".contact-form form");
+const hero = document.querySelector(".hero");
 
-if (form) {
-    form.addEventListener("submit", () => {
+window.addEventListener("scroll", () => {
+
+    if (!hero) return;
+
+    hero.style.backgroundPositionY =
+
+        window.scrollY * 0.35 + "px";
+
+});
+
+
+/* ==========================
+   BUTTON RIPPLE EFFECT
+========================== */
+
+document.querySelectorAll(".btn,.btn2").forEach(button => {
+
+    button.addEventListener("click", function (e) {
+
+        const ripple = document.createElement("span");
+
+        ripple.className = "ripple";
+
+        const rect = this.getBoundingClientRect();
+
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        this.appendChild(ripple);
+
         setTimeout(() => {
-            alert("Thank you for contacting me!\n\nI'll get back to you soon.");
-        }, 500);
+            ripple.remove();
+        }, 600);
+
     });
+
+});
+
+const contactForm = document.querySelector(".contact-form form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector("button");
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+        const formData = new FormData(contactForm);
+
+        try {
+
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                contactForm.reset();
+
+                submitBtn.innerHTML =
+                    '<i class="fa-solid fa-check"></i> Sent Successfully';
+
+                alert(
+                    "✅ Thank you!\n\nYour message has been sent successfully.\nI'll get back to you as soon as possible."
+                );
+
+                setTimeout(() => {
+
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+
+                }, 2500);
+
+            } else {
+
+                throw new Error("Submission failed");
+
+            }
+
+        } catch (error) {
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+
+            alert("❌ Unable to send your message.\nPlease try again later.");
+
+        }
+
+    });
+
 }
+
 
 /* ==========================
    FOOTER YEAR
 ========================== */
 
-const copyright =
-document.querySelector(".copyright");
+const year = document.getElementById("year");
 
-if(copyright){
+if (year) {
 
-copyright.innerHTML =
-`© ${new Date().getFullYear()} Shibin Jaison. All Rights Reserved.`;
+    year.textContent = new Date().getFullYear();
 
 }
 
 
 /* ==========================
-   PRELOAD ANIMATIONS
+   PAGE LOADED CLASS
 ========================== */
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-document.body.classList.add("loaded");
+    document.body.classList.add("loaded");
 
 });
+
+/* ==========================
+   MOBILE MENU
+========================== */
+
+document.querySelectorAll(".btn, .btn2").forEach(button => {
+
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "translateY(-3px)";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "translateY(0)";
+    });
+
+});
+
+const progressBar = document.createElement("div");
+
+progressBar.id = "scroll-progress";
+
+document.body.appendChild(progressBar);
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    progressBar.style.width =
+        (scrollTop / scrollHeight) * 100 + "%";
+
+});
+
+/* ==========================================
+   SHIBIN JAISON PORTFOLIO
+   main.js
+   PART 4
+   Mobile Menu • Utilities • Final
+========================================== */
+
 
 /* ==========================
    MOBILE MENU
@@ -391,15 +612,223 @@ document.body.classList.add("loaded");
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-links");
 
-if(menuToggle){
+if (menuToggle && navMenu) {
 
-    menuToggle.addEventListener("click",()=>{
+    menuToggle.addEventListener("click", () => {
 
         navMenu.classList.toggle("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        if (navMenu.classList.contains("active")) {
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
 
     });
 
 }
-/* ==========================================
+
+
+/* ==========================
+   CLOSE MENU AFTER CLICK
+========================== */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (!navMenu) return;
+
+        navMenu.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+/* ==========================
+   CLOSE MENU ON OUTSIDE CLICK
+========================== */
+
+document.addEventListener("click", (e) => {
+
+    if (!menuToggle || !navMenu) return;
+
+    if (
+
+        !menuToggle.contains(e.target) &&
+        !navMenu.contains(e.target)
+
+    ) {
+
+        navMenu.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* ==========================
+   ESC KEY CLOSE MENU
+========================== */
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        if (!menuToggle || !navMenu) return;
+
+        navMenu.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* ==========================
+   IMAGE LAZY LOADING
+========================== */
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.setAttribute("loading", "lazy");
+
+});
+
+
+/* ==========================
+   REMOVE FOCUS AFTER CLICK
+========================== */
+
+document.querySelectorAll("button,a").forEach(element => {
+
+    element.addEventListener("mouseup", function () {
+
+        this.blur();
+
+    });
+
+});
+
+
+/* ==========================
+   WINDOW RESIZE
+========================== */
+
+window.addEventListener("resize", () => {
+
+    if (
+
+        window.innerWidth > 992 &&
+        navMenu &&
+        menuToggle
+
+    ) {
+
+        navMenu.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* ==========================
+   DISABLE RIGHT CLICK
+   (Optional)
+========================== */
+
+/*
+
+document.addEventListener("contextmenu",(e)=>{
+
+    e.preventDefault();
+
+});
+
+*/
+
+
+/* ==========================
+   DISABLE DRAGGING IMAGES
+========================== */
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("dragstart", e => {
+
+        e.preventDefault();
+
+    });
+
+});
+
+
+/* ==========================
+   CONSOLE MESSAGE
+========================== */
+
+console.log(
+
+"%cShibin Jaison Portfolio",
+
+"color:#00d9ff;font-size:22px;font-weight:bold;"
+
+);
+
+console.log(
+
+"%cDesigned & Developed by Shibin Jaison",
+
+"color:#ffffff;font-size:14px;"
+
+);
+
+
+/* ==========================
+   PERFORMANCE
+========================== */
+
+window.addEventListener(
+
+    "scroll",
+
+    () => {},
+
+    { passive: true }
+
+);
+
+
+/* ==========================
    END OF FILE
-========================================== */
+========================== */
+
+console.log("Portfolio Loaded Successfully.");
