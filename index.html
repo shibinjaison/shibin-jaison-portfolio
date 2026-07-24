@@ -18,8 +18,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="canonical"
+    href="https://shibinjaison.github.io/">
+
+    <meta property="og:title" content="Shibin Jaison | AI & ML Engineer">
+    <meta property="og:description" content="AI & Machine Learning Engineer specializing in Computer Vision and Robotics">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/profile.jpg">
+    <meta property="og:url" content="https://shibinjaison.github.io">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -46,8 +56,6 @@
 <!-- ================= Header ================= -->
 
 <header>
-
-<header>
     <nav>
 
         <div class="logo">
@@ -64,12 +72,13 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
     </nav>
 </header>
-
 <!-- ================= Hero ================= -->
 
 <section id="home" class="hero">
@@ -103,7 +112,7 @@ AI-powered applications that solve real-world problems.
 View Projects
 </a>
 
-<a href="assets/resume.pdf" class="btn2">
+<a href="assets/resume.pdf" class="btn2" download>
 
 <i class="fa-solid fa-download"></i>
 
@@ -1070,11 +1079,11 @@ Modern AI-inspired responsive portfolio website with glassmorphism, animations, 
 <a href="https://www.linkedin.com/in/shibin-jaison/" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-linkedin"></i>
 </a>
-<<<<<<< HEAD
 
-=======
->>>>>>> 67e63ce (Added responsive mobile hamburger menu)
-<a href="https://github.com/shibinjaison"><i class="fab fa-github"></i></a>
+<a href="https://github.com/shibinjaison"
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fab fa-github"></i></a>
 
 <a href="mailto:shibinjaison7@gmail.com">
 
@@ -1088,7 +1097,7 @@ Modern AI-inspired responsive portfolio website with glassmorphism, animations, 
 
 <div class="contact-form">
 
-<form action="https://formspree.io/f/mdaqdwva" method="POST">
+<form id="contactForm" action="https://formspree.io/f/mdaqdwva" method="POST">
 
     <input
         type="text"
@@ -1122,6 +1131,7 @@ Modern AI-inspired responsive portfolio website with glassmorphism, animations, 
     </button>
 
 </form>
+<p id="form-status"></p>
 
 </div>
 
@@ -1166,11 +1176,8 @@ Robotics Enthusiast
 </div>
 
 <p class="copyright">
-
-© 2026 Shibin Jaison. All Rights Reserved.
-
+© <span id="year"></span> Shibin Jaison. All Rights Reserved.
 </p>
-
 </div>
 
 </footer>
@@ -1181,7 +1188,7 @@ Robotics Enthusiast
 
 <!-- Scroll To Top -->
 
-<button id="topBtn">
+<button id="topBtn" aria-label="Scroll to Top">
 
 <i class="fa-solid fa-arrow-up"></i>
 
