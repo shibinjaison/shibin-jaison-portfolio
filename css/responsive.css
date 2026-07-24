@@ -565,6 +565,10 @@
         justify-content:center;
         flex-wrap:wrap;
     }
+   .hero-image img{
+        width:260px;
+        height:260px;
+    }
 
     footer{
         text-align:center;
@@ -740,6 +744,10 @@
         font-size:15px;
 
     }
+   .hero-image img{
+        width:220px;
+        height:220px;
+    }
 
 }
 
@@ -754,6 +762,11 @@
 
         font-size:18px;
 
+    }
+
+   .hero-image img{
+        width:180px;
+        height:180px;
     }
 
     .menu-toggle{
